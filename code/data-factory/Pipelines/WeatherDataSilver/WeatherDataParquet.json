@@ -1,0 +1,21 @@
+{
+    "name": "WeatherDataParquet",
+    "properties": {
+        "linkedServiceName": {
+            "referenceName": "WeatherDataPreProcessedStorage",
+            "type": "LinkedServiceReference"
+        },
+        "annotations": [],
+        "type": "Parquet",
+        "typeProperties": {
+            "location": {
+                "type": "AzureBlobStorageLocation",
+                "folderPath": "Silver",
+                "container": "harshcontainer"
+            },
+            "compressionCodec": "snappy"
+        },
+        "schema": []
+    },
+    "type": "Microsoft.DataFactory/factories/datasets"
+}

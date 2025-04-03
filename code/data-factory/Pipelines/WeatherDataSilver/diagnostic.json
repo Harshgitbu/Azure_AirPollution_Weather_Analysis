@@ -1,0 +1,23 @@
+{
+    "now": "2025-04-03T16:36:51.768Z",
+    "perfNow": 124594.39999997616,
+    "diagnosticCorrelation": "04f0bf21-f348-4bce-82e4-0e54acad649a",
+    "source": "DownloadSupportFiles",
+    "environment": {
+        "productName": "adf",
+        "buildVersion": "1.0.040125.0",
+        "environmentType": 3,
+        "resourceName": "Harsh-Shah-DataFactory",
+        "resourceRegion": "eastus2",
+        "resourceGroup": "Harsh_Shah_ds598",
+        "subscriptionId": "648e5efc-d385-4d68-963f-941d800119a4",
+        "sessionId": "zpJypHE8z8ClRNzFD1b7rG",
+        "operationId": "",
+        "gitType": "live",
+        "loggingKey": "1c6e5aac-8fc9-4515-9406-b6402e5362e8"
+    },
+    "additionalInfo": {
+        "selectedResource": "WeatherSilverPipeline",
+        "selectedResourceType": "pipeline"
+    }
+}
