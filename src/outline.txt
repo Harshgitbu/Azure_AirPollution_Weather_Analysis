@@ -1,0 +1,11 @@
+/
+├── architecture/           # Diagrams and architecture documentation
+├── code/                   # All code components
+│   ├── function-app/       # Your Azure Function code
+│   ├── synapse/           # Synapse scripts, notebooks
+│   ├── stream-analytics/   # Stream Analytics queries
+├── infrastructure/         # IaC templates
+├── data-samples/           # Sample data (if not sensitive)
+├── powerbi/                # Power BI report templates
+├── docs/                   # Detailed documentation
+└── README.md              # Main project documentation
