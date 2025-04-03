@@ -17,12 +17,12 @@ logging.basicConfig(level=logging.INFO)
 
 
 # Define your Event Hub connection details
-connection_str =  "Endpoint=sb://harsh598namespace.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=nA7UYjOIOKCsP8yXSLvdMzU+EVsW3st1W+AEhPZry0g="
+connection_str =  "endpoint"
 
 eventhub_name = "harsh598eventhub" #name of your instance
 
 # Define your OpenWeather API key and endpoints
-api_key = "ce5de9911b73fac401ffac9abdc027cb"
+api_key = "apikey"
 weather_url = "http://api.openweathermap.org/data/2.5/weather"
 pollution_url = "http://api.openweathermap.org/data/2.5/air_pollution"
 
