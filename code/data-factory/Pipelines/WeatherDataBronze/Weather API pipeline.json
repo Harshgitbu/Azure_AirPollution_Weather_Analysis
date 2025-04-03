@@ -57,7 +57,7 @@
                                     "parameters": {
                                         "lat": "42.3601",
                                         "lon": "-71.0589",
-                                        "appid": "89dcc7c66e788907d6c77754d3ebbf87",
+                                        "appid": "appID",
                                         "start": {
                                             "value": "@div(sub(ticks(addDays(utcNow(), mul(add(item(),1), -7))), ticks('1970-01-01T00:00:00Z')), 10000000)",
                                             "type": "Expression"
