@@ -16,7 +16,7 @@
             },
             "appid": {
                 "type": "string",
-                "defaultValue": "ce5de9911b73fac401ffac9abdc027cb"
+                "defaultValue": "val"
             },
             "start": {
                 "type": "string",
