@@ -1,0 +1,72 @@
+{
+    "name": "Air pollution pipeline",
+    "properties": {
+        "description": "Pipeline for air pollution data",
+        "activities": [
+            {
+                "name": "Air Pollution Data",
+                "description": "Getting data from the API and storing it to blob storage",
+                "type": "Copy",
+                "dependsOn": [],
+                "policy": {
+                    "timeout": "0.12:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "userProperties": [],
+                "typeProperties": {
+                    "source": {
+                        "type": "JsonSource",
+                        "storeSettings": {
+                            "type": "HttpReadSettings",
+                            "requestMethod": "GET"
+                        },
+                        "formatSettings": {
+                            "type": "JsonReadSettings"
+                        }
+                    },
+                    "sink": {
+                        "type": "JsonSink",
+                        "storeSettings": {
+                            "type": "AzureBlobStorageWriteSettings"
+                        },
+                        "formatSettings": {
+                            "type": "JsonWriteSettings"
+                        }
+                    },
+                    "enableStaging": false
+                },
+                "inputs": [
+                    {
+                        "referenceName": "AirPollutionSource",
+                        "type": "DatasetReference",
+                        "parameters": {
+                            "lat": "42.3601",
+                            "lon": "-71.0589",
+                            "appid": "f1eeedbf0685e1db2e6a18737a70ec5c",
+                            "start": {
+                                "value": "1707169554",
+                                "type": "Expression"
+                            },
+                            "end": {
+                                "value": "1740882064",
+                                "type": "Expression"
+                            }
+                        }
+                    }
+                ],
+                "outputs": [
+                    {
+                        "referenceName": "AirPollutionDatasetSink",
+                        "type": "DatasetReference"
+                    }
+                ]
+            }
+        ],
+        "annotations": [],
+        "lastPublishTime": "2025-04-01T21:28:11Z"
+    },
+    "type": "Microsoft.DataFactory/factories/pipelines"
+}
