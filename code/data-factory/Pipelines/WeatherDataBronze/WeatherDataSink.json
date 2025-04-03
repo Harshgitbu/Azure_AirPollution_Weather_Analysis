@@ -1,0 +1,98 @@
+{
+    "name": "WeatherDataSink",
+    "properties": {
+        "linkedServiceName": {
+            "referenceName": "WeatherDataStorage",
+            "type": "LinkedServiceReference"
+        },
+        "annotations": [],
+        "type": "Json",
+        "typeProperties": {
+            "location": {
+                "type": "AzureBlobStorageLocation",
+                "folderPath": "Bronze",
+                "container": "harshcontainer"
+            }
+        },
+        "schema": {
+            "type": "object",
+            "properties": {
+                "coord": {
+                    "type": "object",
+                    "properties": {
+                        "lon": {
+                            "type": "number"
+                        },
+                        "lat": {
+                            "type": "number"
+                        }
+                    }
+                },
+                "list": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "main": {
+                                "type": "object",
+                                "properties": {
+                                    "aqi": {
+                                        "type": "integer"
+                                    }
+                                }
+                            },
+                            "components": {
+                                "type": "object",
+                                "properties": {
+                                    "co": {
+                                        "type": "number"
+                                    },
+                                    "no": {
+                                        "type": "number"
+                                    },
+                                    "no2": {
+                                        "type": "number"
+                                    },
+                                    "o3": {
+                                        "type": "number"
+                                    },
+                                    "so2": {
+                                        "type": "number"
+                                    },
+                                    "pm2_5": {
+                                        "type": "number"
+                                    },
+                                    "pm10": {
+                                        "type": "number"
+                                    },
+                                    "nh3": {
+                                        "type": "number"
+                                    }
+                                }
+                            },
+                            "dt": {
+                                "type": "integer"
+                            }
+                        }
+                    }
+                },
+                "message": {
+                    "type": "string"
+                },
+                "cod": {
+                    "type": "string"
+                },
+                "city_id": {
+                    "type": "integer"
+                },
+                "calctime": {
+                    "type": "number"
+                },
+                "cnt": {
+                    "type": "integer"
+                }
+            }
+        }
+    },
+    "type": "Microsoft.DataFactory/factories/datasets"
+}

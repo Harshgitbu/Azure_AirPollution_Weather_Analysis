@@ -1,0 +1,14 @@
+{
+    "name": "WeatherServer",
+    "type": "Microsoft.DataFactory/factories/linkedservices",
+    "properties": {
+        "description": "Getting data from weather API for weather history",
+        "annotations": [],
+        "type": "HttpServer",
+        "typeProperties": {
+            "url": "https://history.openweathermap.org/",
+            "enableServerCertificateValidation": false,
+            "authenticationType": "Anonymous"
+        }
+    }
+}

@@ -1,0 +1,48 @@
+{
+    "name": "Weather_API",
+    "properties": {
+        "linkedServiceName": {
+            "referenceName": "WeatherServer",
+            "type": "LinkedServiceReference"
+        },
+        "parameters": {
+            "lat": {
+                "type": "string",
+                "defaultValue": "42.3601"
+            },
+            "lon": {
+                "type": "string",
+                "defaultValue": "-71.0589"
+            },
+            "appid": {
+                "type": "string",
+                "defaultValue": "ce5de9911b73fac401ffac9abdc027cb"
+            },
+            "start": {
+                "type": "string",
+                "defaultValue": "@div(sub(ticks(addDays(utcNow(), mul(add(item(),1), -7))), ticks('1970-01-01T00:00:00Z')), 10000000)"
+            },
+            "end": {
+                "type": "string",
+                "defaultValue": "@div(sub(ticks(addDays(utcNow(), mul(item(), -7))), ticks('1970-01-01T00:00:00Z')), 10000000)"
+            },
+            "dataType": {
+                "type": "string",
+                "defaultValue": "hour"
+            }
+        },
+        "annotations": [],
+        "type": "Json",
+        "typeProperties": {
+            "location": {
+                "type": "HttpServerLocation",
+                "relativeUrl": {
+                    "value": "data/2.5/history/city?lat=@{dataset().lat}&lon=@{dataset().lon}&type=@{dataset().dataType}&start=@{dataset().start}&end=@{dataset().end}&appid=@{dataset().appid}",
+                    "type": "Expression"
+                }
+            }
+        },
+        "schema": {}
+    },
+    "type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,88 @@
+{
+    "name": "Weather API pipeline",
+    "properties": {
+        "description": "Getting data for weather history from API",
+        "activities": [
+            {
+                "name": "ForEach1",
+                "type": "ForEach",
+                "dependsOn": [],
+                "userProperties": [],
+                "typeProperties": {
+                    "items": {
+                        "value": "@range(0,52)",
+                        "type": "Expression"
+                    },
+                    "isSequential": true,
+                    "activities": [
+                        {
+                            "name": "WeatherData",
+                            "type": "Copy",
+                            "dependsOn": [],
+                            "policy": {
+                                "timeout": "0.12:00:00",
+                                "retry": 0,
+                                "retryIntervalInSeconds": 30,
+                                "secureOutput": false,
+                                "secureInput": false
+                            },
+                            "userProperties": [],
+                            "typeProperties": {
+                                "source": {
+                                    "type": "JsonSource",
+                                    "storeSettings": {
+                                        "type": "HttpReadSettings",
+                                        "requestMethod": "GET"
+                                    },
+                                    "formatSettings": {
+                                        "type": "JsonReadSettings"
+                                    }
+                                },
+                                "sink": {
+                                    "type": "JsonSink",
+                                    "storeSettings": {
+                                        "type": "AzureBlobStorageWriteSettings",
+                                        "copyBehavior": "PreserveHierarchy"
+                                    },
+                                    "formatSettings": {
+                                        "type": "JsonWriteSettings"
+                                    }
+                                },
+                                "enableStaging": false
+                            },
+                            "inputs": [
+                                {
+                                    "referenceName": "Weather_API",
+                                    "type": "DatasetReference",
+                                    "parameters": {
+                                        "lat": "42.3601",
+                                        "lon": "-71.0589",
+                                        "appid": "89dcc7c66e788907d6c77754d3ebbf87",
+                                        "start": {
+                                            "value": "@div(sub(ticks(addDays(utcNow(), mul(add(item(),1), -7))), ticks('1970-01-01T00:00:00Z')), 10000000)",
+                                            "type": "Expression"
+                                        },
+                                        "end": {
+                                            "value": "@div(sub(ticks(addDays(utcNow(), mul(item(), -7))), ticks('1970-01-01T00:00:00Z')), 10000000)",
+                                            "type": "Expression"
+                                        },
+                                        "dataType": "hour"
+                                    }
+                                }
+                            ],
+                            "outputs": [
+                                {
+                                    "referenceName": "WeatherDataSink",
+                                    "type": "DatasetReference"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        ],
+        "annotations": [],
+        "lastPublishTime": "2025-03-26T20:21:44Z"
+    },
+    "type": "Microsoft.DataFactory/factories/pipelines"
+}
