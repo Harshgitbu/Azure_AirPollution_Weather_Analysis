@@ -18,7 +18,7 @@ Identify trends in air quality over time and correlate with weather conditions.
 - Ozone concentrations peak during hot, sunny days
 - Air quality generally improves after rainfall events
 
-![AQ Trends Screenshot](../powerbi/screenshots/aq_trends.png)
+![AQ Trends Screenshot](../powerbi/Stream_Analytics_powerBI.png)
 
 ## Scenario 2: Real-time Air Quality Monitoring
 
@@ -52,7 +52,7 @@ Analyze historical weather patterns to identify seasonal trends.
 - Humidity levels correlate strongly with precipitation events
 - Wind patterns show consistent directional trends during specific seasons
 
-![Weather Patterns Screenshot](../powerbi/screenshots/weather_patterns.png)
+![Weather Patterns Screenshot](../powerbi/Stream_Analytics_powerBI.png)
 
 ## Scenario 4: Custom Reporting
 
