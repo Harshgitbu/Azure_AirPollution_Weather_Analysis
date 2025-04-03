@@ -1,0 +1,61 @@
+source(output(
+		coord as (lat as double, lon as double),
+		list as (components as (co as double, nh3 as double, no as double, no2 as double, o3 as double, pm10 as double, pm2_5 as double, so2 as double), dt as integer, main as (aqi as short))[]
+	),
+	allowSchemaDrift: true,
+	validateSchema: false,
+	ignoreNoFilesFound: false,
+	documentForm: 'documentPerLine',
+	wildcardPaths:['Bronze/AirPollutionData/2.5/air_pollution/history*'],
+	partitionBy('hash', 1)) ~> AirPollutionSilver
+AirPollutionSilver foldDown(unroll(list, list),
+	mapColumn(
+		lat = coord.lat,
+		lon = coord.lon,
+		co = list.components.co,
+		nh3 = list.components.nh3,
+		no = list.components.no,
+		no2 = list.components.no2,
+		o3 = list.components.o3,
+		pm10 = list.components.pm10,
+		pm2_5 = list.components.pm2_5,
+		so2 = list.components.so2,
+		timestamp = list.dt,
+		aqi = list.main.aqi
+	),
+	skipDuplicateMapInputs: false,
+	skipDuplicateMapOutputs: false) ~> flattenAirPollution
+flattenAirPollution derive(location = 'Boston') ~> TimestampAndLocation
+TimestampAndLocation derive(id = concat(location, toString(timestamp)),
+		co = toString(round(co, 2), '0.00'),
+		nh3 = toString(round(nh3, 2), '0.00'),
+		no = toString(round(no, 2), '0.00'),
+		no2 = toString(round(no2, 2), '0.00'),
+		o3 = toString(round(03, 2), '0.00'),
+		pm10 = toString(round(pm10, 2), '0.00'),
+		pm2_5 = toString(round(pm2_5, 2), '0.00'),
+		so2 = toString(round(so2, 2), '0.00'),
+		date_time = toTimestamp(toLong(timestamp) * 1000L)) ~> RemainingColumnsForAirPollution
+RemainingColumnsForAirPollution select(mapColumn(
+		id,
+		location,
+		date_time,
+		aqi,
+		co,
+		nh3,
+		no,
+		no2,
+		o3,
+		pm10,
+		pm2_5,
+		so2
+	),
+	skipDuplicateMapInputs: true,
+	skipDuplicateMapOutputs: true) ~> RenameAndDrop
+RenameAndDrop sink(allowSchemaDrift: true,
+	validateSchema: false,
+	format: 'parquet',
+	partitionFileNames:['AirPollutionSilverData'],
+	skipDuplicateMapInputs: true,
+	skipDuplicateMapOutputs: true,
+	partitionBy('hash', 1)) ~> AirPollutionSilverSink

@@ -1,0 +1,36 @@
+{
+    "name": "AirPollutionSilverPipeline",
+    "properties": {
+        "description": "Running pre processed air pollution data for silver layer",
+        "activities": [
+            {
+                "name": "AirPollutionDataFlow",
+                "description": "Pipeline based on air pollution data flow",
+                "type": "ExecuteDataFlow",
+                "dependsOn": [],
+                "policy": {
+                    "timeout": "0.12:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "userProperties": [],
+                "typeProperties": {
+                    "dataflow": {
+                        "referenceName": "PreProcessAirPollution",
+                        "type": "DataFlowReference"
+                    },
+                    "compute": {
+                        "coreCount": 8,
+                        "computeType": "General"
+                    },
+                    "traceLevel": "Fine"
+                }
+            }
+        ],
+        "annotations": [],
+        "lastPublishTime": "2025-03-27T21:22:18Z"
+    },
+    "type": "Microsoft.DataFactory/factories/pipelines"
+}
