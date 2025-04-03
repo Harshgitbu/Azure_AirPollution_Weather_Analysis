@@ -19,3 +19,9 @@ This solution uses multiple Azure services to process weather data from OpenWeat
 - Scalable data processing pipeline
 - Interactive visualizations and dashboards
 - Historical data analysis capabilities
+
+## Setup Instructions
+See [Setup Guide](docs/setup-guide.md) for detailed instructions.
+
+## Results and Insights
+[Screenshots and descriptions of key findings from Power BI dashboards]
