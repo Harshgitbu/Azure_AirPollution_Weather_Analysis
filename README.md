@@ -5,7 +5,7 @@ A comprehensive solution for collecting, processing, and visualizing air polluti
 ## Architecture Overview
 This solution uses multiple Azure services to process weather data from OpenWeather API:
 
-![Architecture Diagram](architecture/architecture-diagram.png)
+![Architecture Diagram](architecture/Architecture.png)
 
 - **Data Ingestion**: Azure Functions trigger data collection from OpenWeather API
 - **Data Processing**: Azure Synapse Analytics and Azure Data Factory process and transform raw data
