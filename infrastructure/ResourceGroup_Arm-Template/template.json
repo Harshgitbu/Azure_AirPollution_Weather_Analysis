@@ -364,7 +364,7 @@
                 "privateEndpointConnections": [],
                 "publicNetworkAccess": "Enabled",
                 "cspWorkspaceAdminProperties": {
-                    "initialWorkspaceAdminObjectId": "0956986e-67b6-44de-998f-f0a1d40f8d2b"
+                    "initialWorkspaceAdminObjectId": "id"
                 },
                 "azureADOnlyAuthentication": false,
                 "trustedServiceBypassEnabled": false
@@ -383,7 +383,7 @@
                 "isStorageSecondaryKeyInUse": false,
                 "isAzureMonitorTargetEnabled": false,
                 "state": "Disabled",
-                "storageAccountSubscriptionId": "00000000-0000-0000-0000-000000000000"
+                "storageAccountSubscriptionId": "id"
             }
         },
         {
@@ -454,7 +454,7 @@
                 "isStorageSecondaryKeyInUse": false,
                 "isAzureMonitorTargetEnabled": false,
                 "state": "Disabled",
-                "storageAccountSubscriptionId": "00000000-0000-0000-0000-000000000000"
+                "storageAccountSubscriptionId": "id"
             }
         },
         {
@@ -569,7 +569,7 @@
                 "hostNamesDisabled": false,
                 "ipMode": "IPv4",
                 "vnetBackupRestoreEnabled": false,
-                "customDomainVerificationId": "CAD3C7A10F8D625306CB082A39685D6E6BE904E281C7F45C3E65CEBBD55D8FF4",
+                "customDomainVerificationId": "id",
                 "containerSize": 1536,
                 "dailyMemoryTimeQuota": 0,
                 "httpsOnly": true,
@@ -660,7 +660,7 @@
                     "supportCredentials": false
                 },
                 "localMySqlEnabled": false,
-                "managedServiceIdentityId": 118301,
+                "managedServiceIdentityId": id,
                 "ipSecurityRestrictions": [
                     {
                         "ipAddress": "Any",
