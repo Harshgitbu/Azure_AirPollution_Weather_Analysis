@@ -1,0 +1,5 @@
+azure-functions
+requests
+azure-eventhub
+azure-identity
+pytz
