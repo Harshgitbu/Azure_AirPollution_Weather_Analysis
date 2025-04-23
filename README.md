@@ -53,7 +53,7 @@ The project includes several Power BI dashboards:
 - Real-time Monitoring Dashboard
 - Correlation Analysis
 
-![Power BI Dashboard](powerbi/Stream_Analytics_powerBI.png)
+![Power BI Dashboard](powerbi/Dashboard1.png)
 
 ## Deployment
 The entire solution can be deployed using the ARM templates provided in the `infrastructure` directory. See the [Setup Guide](docs/setup-guide.md) for detailed instructions.
