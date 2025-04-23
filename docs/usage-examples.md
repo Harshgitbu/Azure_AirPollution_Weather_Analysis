@@ -36,6 +36,8 @@ The real-time monitoring uses:
 - Stream Analytics processing for immediate analysis
 - Event Hubs for notification routing
 
+![Real_Time_Dashboard](../powerbi/realtime.png)
+
 ## Scenario 3: Weather Pattern Analysis
 
 ### Use Case
