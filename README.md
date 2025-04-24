@@ -1,4 +1,4 @@
-# Azure Weather & Air Pollution Analytics Project
+# Azure Weather & Air Pollution Analysis
 
 ## Overview
 This project uses Azure cloud services to collect, process, and analyze weather and air pollution data from OpenWeather API. The system provides both historical analysis and real-time monitoring capabilities through a series of interconnected Azure services and Power BI visualizations.
