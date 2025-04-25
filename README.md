@@ -65,3 +65,6 @@ The entire solution can be deployed using the ARM templates provided in the `inf
 
 ## Contributing
 Contributions are welcome! Please feel free to submit a Pull Request.
+
+---
+_Last updated: 2025-04-22_
