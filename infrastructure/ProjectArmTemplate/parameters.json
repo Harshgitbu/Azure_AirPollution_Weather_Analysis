@@ -1,0 +1,63 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "datastores_azureml_globaldatasets_secretsType": {
+            "value": null
+        },
+        "datastores_ml_secretsType": {
+            "value": null
+        },
+        "datastores_workspaceartifactstore_secretsType": {
+            "value": null
+        },
+        "datastores_workspaceblobstore_secretsType": {
+            "value": null
+        },
+        "datastores_workspacefilestore_secretsType": {
+            "value": null
+        },
+        "datastores_workspaceworkingdirectory_secretsType": {
+            "value": null
+        },
+        "vulnerabilityAssessments_Default_storageContainerPath": {
+            "value": null
+        },
+        "sites_Harshfunctionapp_name": {
+            "value": null
+        },
+        "workspaces_harsh_synapse_name": {
+            "value": null
+        },
+        "vaults_harsh598ml3592322081_name": {
+            "value": null
+        },
+        "namespaces_harsh598namespace_name": {
+            "value": null
+        },
+        "serverfarms_ASP_HarshShahds598_bff6_name": {
+            "value": null
+        },
+        "components_harsh598ml7903430959_name": {
+            "value": null
+        },
+        "storageAccounts_harshshahstorage_name": {
+            "value": null
+        },
+        "storageAccounts_harsh598ml7901365254_name": {
+            "value": null
+        },
+        "workspaces_harsh598ML_name": {
+            "value": null
+        },
+        "workspaces_harsh598ml2886058184_name": {
+            "value": null
+        },
+        "actionGroups_Application_Insights_Smart_Detection_name": {
+            "value": null
+        },
+        "streamingjobs_Harsh_stream_analytics_ds598_name": {
+            "value": null
+        }
+    }
+}
