@@ -55,6 +55,11 @@ The project includes several Power BI dashboards:
 
 ![Power BI Dashboard](powerbi/Dashboard1.png)
 
+## Baseline Modeling to Predict AQI
+Just a quick model buidling through Azure ML studio to gain some experience of how it works!
+
+![MLStudio Model](powerbi/Dashboard1.png)
+
 ## Deployment
 The entire solution can be deployed using the ARM templates provided in the `infrastructure` directory. See the [Setup Guide](docs/setup-guide.md) for detailed instructions.
 
